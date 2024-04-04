@@ -1,10 +1,13 @@
 package com.pls.config;
 
 import com.pls.config.converters.StringToBrowserTypeConverter;
+import com.pls.config.converters.StringToURLConverter;
 import com.pls.config.enums.BrowserRemoteModeType;
 import com.pls.config.enums.BrowserType;
 import com.pls.config.enums.RunModeBrowserType;
 import org.aeonbits.owner.Config;
+
+import java.net.URL;
 
 @Config.LoadPolicy(Config.LoadType.MERGE)
 @Config.Sources({
@@ -25,4 +28,11 @@ public interface FrameworkConfig extends Config {
 
     @Key("browserRemoteMode")
     BrowserRemoteModeType browserRemoteMode();
+
+    @Key("seleniumGridURL")
+    @ConverterClass(StringToURLConverter.class)
+    URL seleniumGridURL();
+
+    @ConverterClass(StringToURLConverter.class)
+    URL selenoidURL();
 }

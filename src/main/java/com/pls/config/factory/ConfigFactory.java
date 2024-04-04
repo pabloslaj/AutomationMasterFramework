@@ -1,5 +1,6 @@
-package com.pls.config;
+package com.pls.config.factory;
 
+import com.pls.config.FrameworkConfig;
 import org.aeonbits.owner.ConfigCache;
 
 public final class ConfigFactory {
