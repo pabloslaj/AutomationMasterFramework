@@ -1,10 +1,10 @@
 package com.pls.config;
 
 import com.pls.config.converters.StringToBrowserTypeConverter;
+import com.pls.config.converters.StringToMobileRemoteModeTypeConverter;
+import com.pls.config.converters.StringToRunModeBrowserTypeConverter;
 import com.pls.config.converters.StringToURLConverter;
-import com.pls.config.enums.BrowserRemoteModeType;
-import com.pls.config.enums.BrowserType;
-import com.pls.config.enums.RunModeBrowserType;
+import com.pls.enums.*;
 import org.aeonbits.owner.Config;
 
 import java.net.URL;
@@ -29,10 +29,22 @@ public interface FrameworkConfig extends Config {
     @Key("browserRemoteMode")
     BrowserRemoteModeType browserRemoteMode();
 
+    @Key("runModeMobile")
+    @ConverterClass(StringToRunModeBrowserTypeConverter.class)
+    RunModeType mobileRunMode();
+
+    @Key("mobileRemoteMode")
+    @ConverterClass(StringToMobileRemoteModeTypeConverter.class)
+    MobileRemoteModeType mobileRemoteMode();
+
     @Key("seleniumGridURL")
     @ConverterClass(StringToURLConverter.class)
     URL seleniumGridURL();
 
     @ConverterClass(StringToURLConverter.class)
     URL selenoidURL();
+
+    @ConverterClass(StringToURLConverter.class)
+    @DefaultValue("http://127.0.0.1:4723/wd/hub")
+    URL localAppiumServerURL();
 }

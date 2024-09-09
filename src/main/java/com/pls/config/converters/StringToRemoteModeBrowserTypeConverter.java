@@ -1,6 +1,6 @@
 package com.pls.config.converters;
 
-import com.pls.config.enums.BrowserRemoteModeType;
+import com.pls.enums.BrowserRemoteModeType;
 import org.aeonbits.owner.Converter;
 
 import java.lang.reflect.Method;

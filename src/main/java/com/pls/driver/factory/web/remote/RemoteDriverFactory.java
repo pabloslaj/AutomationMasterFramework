@@ -1,7 +1,7 @@
-package com.pls.driver.web.remote;
+package com.pls.driver.factory.web.remote;
 
-import com.pls.config.enums.BrowserRemoteModeType;
-import com.pls.config.enums.BrowserType;
+import com.pls.enums.BrowserRemoteModeType;
+import com.pls.enums.BrowserType;
 import org.openqa.selenium.WebDriver;
 
 import java.util.EnumMap;

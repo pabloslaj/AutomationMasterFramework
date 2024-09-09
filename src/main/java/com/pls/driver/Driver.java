@@ -1,7 +1,7 @@
 package com.pls.driver;
 
 import com.pls.config.factory.ConfigFactory;
-import com.pls.driver.web.local.LocalDriverFactory;
+import com.pls.driver.factory.web.local.LocalDriverFactory;
 import org.openqa.selenium.WebDriver;
 
 public final class Driver {

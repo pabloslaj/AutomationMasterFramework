@@ -1,6 +1,6 @@
-package com.pls.driver.web.local;
+package com.pls.driver.factory.web.local;
 
-import com.pls.config.enums.BrowserType;
+import com.pls.enums.BrowserType;
 import com.pls.driver.manager.web.local.ChromeManager;
 import com.pls.driver.manager.web.local.FirefoxManager;
 import org.openqa.selenium.WebDriver;

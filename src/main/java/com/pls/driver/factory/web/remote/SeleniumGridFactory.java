@@ -1,6 +1,6 @@
-package com.pls.driver.web.remote;
+package com.pls.driver.factory.web.remote;
 
-import com.pls.config.enums.BrowserType;
+import com.pls.enums.BrowserType;
 import com.pls.driver.manager.web.remote.selenium.SeleniumGridChromeManager;
 import com.pls.driver.manager.web.remote.selenium.SeleniumGridFirefoxManager;
 import org.openqa.selenium.WebDriver;

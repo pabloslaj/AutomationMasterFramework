@@ -1,4 +1,4 @@
-package com.pls.config.enums;
+package com.pls.enums;
 
 public enum BrowserRemoteModeType {
 

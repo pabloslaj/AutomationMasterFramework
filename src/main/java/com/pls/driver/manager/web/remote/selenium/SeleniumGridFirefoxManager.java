@@ -1,7 +1,7 @@
 package com.pls.driver.manager.web.remote.selenium;
 
 import com.pls.config.factory.ConfigFactory;
-import com.pls.config.enums.BrowserType;
+import com.pls.enums.BrowserType;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
