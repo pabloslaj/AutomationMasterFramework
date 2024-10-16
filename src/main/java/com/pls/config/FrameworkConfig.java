@@ -1,9 +1,6 @@
 package com.pls.config;
 
-import com.pls.config.converters.StringToBrowserTypeConverter;
-import com.pls.config.converters.StringToMobileRemoteModeTypeConverter;
-import com.pls.config.converters.StringToRunModeBrowserTypeConverter;
-import com.pls.config.converters.StringToURLConverter;
+import com.pls.config.converters.*;
 import com.pls.enums.*;
 import org.aeonbits.owner.Config;
 
@@ -19,14 +16,22 @@ import java.net.URL;
 })
 public interface FrameworkConfig extends Config {
 
-    @DefaultValue("Chrome")
+    @DefaultValue("staging")
+    String environment();
+
+    @Key("${environment}.webUrl")
+    String webUrl();
+
+    @DefaultValue("CHROME")
     @ConverterClass(StringToBrowserTypeConverter.class)
     BrowserType browser();
 
     @Key("runModeBrowser")
-    RunModeBrowserType browserRunMode();
+    @ConverterClass(StringToRunModeBrowserTypeConverter.class)
+    RunModeType browserRunMode();
 
     @Key("browserRemoteMode")
+    @ConverterClass(StringToRemoteModeBrowserTypeConverter.class)
     BrowserRemoteModeType browserRemoteMode();
 
     @Key("runModeMobile")
@@ -37,7 +42,6 @@ public interface FrameworkConfig extends Config {
     @ConverterClass(StringToMobileRemoteModeTypeConverter.class)
     MobileRemoteModeType mobileRemoteMode();
 
-    @Key("seleniumGridURL")
     @ConverterClass(StringToURLConverter.class)
     URL seleniumGridURL();
 
@@ -47,4 +51,8 @@ public interface FrameworkConfig extends Config {
     @ConverterClass(StringToURLConverter.class)
     @DefaultValue("http://127.0.0.1:4723/wd/hub")
     URL localAppiumServerURL();
+
+    @ConverterClass(StringToMobilePlatformTypeConverter.class)
+    @DefaultValue("ios")
+    MobilePlatformType mobilePlatformType();
 }
